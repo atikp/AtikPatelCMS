@@ -1,0 +1,22 @@
+=form_for ["admin", @menu] do |f|
+  %p
+    =f.text_field :name, class: "form-control"
+  
+  %h3 Menu Items
+  =f.fields_for :menu_items do |c|
+    %p
+      =c.text_field :title,placeholder: "Title", class: "form-control"
+      =c.text_field :url, placeholder: "enter URL or path here",class: "form-control"
+      =c.hidden_field :id
+      
+    
+      
+    
+    
+  
+  %p
+    =f.submit
+    
+  %p
+    =link_to "back", admin_menus_path, class: "btn btn-danger"
+    

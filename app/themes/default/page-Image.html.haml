@@ -1,0 +1,9 @@
+%h1= raw @page.title
+
+=image_tag @page.url, title: @page.caption
+
+%p
+  %em=time_ago_in_words @page.created_at
+= raw @page.body
+
+

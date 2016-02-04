@@ -1,0 +1,15 @@
+%blockquote
+  This refers to page with id 1
+
+%h1= raw @page.title
+
+%p
+  %em=time_ago_in_words @page.created_at
+= raw @page.body
+
+%dl
+  -@page.fields.each do |field|
+    %dt=field.field_definition.key
+    %dd=field.value
+    
+

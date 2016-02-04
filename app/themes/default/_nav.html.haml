@@ -1,0 +1,12 @@
+%nav.navbar.navbar-default.navbar-static-top
+  =link_to "CMSB", root_path, class: "navbar-brand"
+  #main-nav
+    %ul.nav.navbar-nav
+      -if @menus.any?
+        -@menus.find { |menu| menu.name == "Main Nav" }.menu_items.each do |item|
+          %li
+            =link_to item.title, item.url
+
+
+
+

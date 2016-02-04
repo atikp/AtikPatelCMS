@@ -1,0 +1,7 @@
+%h1 All pages
+- Page.all.each do |page|
+  %article.clearfix
+    %h2=link_to page.title.html_safe, url_for_page(page)
+    %p.text-muted=page.created_at.to_formatted_s :long
+    = truncate page.body.html_safe, length:100
+  %hr
